@@ -6,4 +6,8 @@
     <RootNamespace>Images_Assembler</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="ImageProcessor" Version="2.9.1" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Images_Assembler
 {
@@ -6,7 +7,8 @@ namespace Images_Assembler
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            byte[] photoBytes = File.ReadAllBytes("niko.png");
+            Console.WriteLine(photoBytes[0]);
         }
     }
 }
