@@ -2,11 +2,11 @@
 
 namespace Image_Assembler
 {
-	public class Picture()
+	public class Picture
 	{
 		private string path;
 
-		public Class1(string path)
+		public Picture(string path)
 		{
 			this.path = path;
 		}
