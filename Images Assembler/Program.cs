@@ -7,8 +7,7 @@ namespace Images_Assembler
     {
         static void Main(string[] args)
         {
-            byte[] photoBytes = File.ReadAllBytes("niko.png");
-            Console.WriteLine(photoBytes[0]);
+            
         }
     }
 }
