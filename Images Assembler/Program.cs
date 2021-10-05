@@ -24,7 +24,7 @@ namespace Images_Assembler
                         // Load, resize, set the format and quality and save an image.
                         imageFactory.Load(inStream)
                                     .Resize(size)
-                                    .Format(format)
+                                    .Vignette(new Color())
                                     .Save(outStream);
                     }
                     // Do something with the stream.
