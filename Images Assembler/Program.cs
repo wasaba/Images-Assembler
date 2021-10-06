@@ -11,23 +11,26 @@ namespace Images_Assembler
         static void Main(string[] args)
         {
             byte[] photoBytes = File.ReadAllBytes("niko.png");
-            
-            ISupportedImageFormat format = new JpegFormat { Quality = 70 };
+
+            ISupportedImageFormat format = new PngFormat { Quality = 70 };
             Size size = new Size(150, 0);
             using (MemoryStream inStream = new MemoryStream(photoBytes))
             {
                 using (MemoryStream outStream = new MemoryStream())
-                {
-                    
+                {                
                     using (ImageFactory imageFactory = new ImageFactory(preserveExifData: true))
                     {
                         // Load, resize, set the format and quality and save an image.
                         imageFactory.Load(inStream)
                                     .Resize(size)
-                                    .Vignette(new Color())
+                                    .Rotate(90)
+                                    .Format(format)
                                     .Save(outStream);
+
                     }
                     // Do something with the stream.
+                    Console.WriteLine(outStream.GetBuffer());
+
                 }
             }
 
