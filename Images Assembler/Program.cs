@@ -15,9 +15,7 @@ namespace Images_Assembler
             ISupportedImageFormat format = new PngFormat { Quality = 70 };
             Size size = new Size(150, 0);
             using (MemoryStream inStream = new MemoryStream(photoBytes))
-            {
-                using (MemoryStream outStream = new MemoryStream())
-                {                
+            {             
                     using (ImageFactory imageFactory = new ImageFactory(preserveExifData: true))
                     {
                         // Load, resize, set the format and quality and save an image.
@@ -25,13 +23,9 @@ namespace Images_Assembler
                                     .Resize(size)
                                     .Rotate(90)
                                     .Format(format)
-                                    .Save(outStream);
-
+                                    .Save("created/niko2.png");
                     }
-                    // Do something with the stream.
-                    Console.WriteLine(outStream.GetBuffer());
-
-                }
+                    // Do something with the stream
             }
 
         }
