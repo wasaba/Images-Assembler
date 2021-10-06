@@ -9,6 +9,7 @@ namespace Image_Assembler
 		public Picture(string path)
 		{
 			this.path = path;
+
 		}
 	}
 }
