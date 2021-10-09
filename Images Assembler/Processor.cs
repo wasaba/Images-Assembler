@@ -18,7 +18,16 @@ namespace Image_Assembler
             {
 				gr.DrawImage(ImageOverlay, new Point(0, 0));
             }
-			bit.Save("output.png");
+			if(Directory.Exists("rendered"))
+            {
+				bit.Save("rendered/output.png");
+			}
+            else
+            {
+				Directory.CreateDirectory("rendered");
+            }
+
+			bit.Save("rendered/output1.png");
         }
 	}
 }
